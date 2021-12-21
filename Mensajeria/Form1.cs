@@ -19,11 +19,17 @@ namespace Mensajeria
         public Form1()
         {
             InitializeComponent();
+            //Agregue un método o un eventHandler que se encarga del doble click, pude llegar a esta solución gracias a este link: https://stackoverflow.com/questions/13486245/winforms-how-to-call-a-double-click-event-on-a-button
+            lsViewContactos.DoubleClick += new EventHandler(lsViewContactos_DoubleClick);
             adminContactos = new AdminContactos();
             idContacto = 0;
             ActualizarLsView(lsViewContactos);
         }
-
+        private void lsViewContactos_DoubleClick(object sender, EventArgs e)
+        {
+            ListViewItem listViewItem = lsViewContactos.SelectedItems[0];
+            MessageBox.Show(listViewItem.Text);
+        }
         //Panel para visualizar y mantener los contactos.
         private void bttnNuevoContacto_Click(object sender, EventArgs e)
         {
@@ -71,6 +77,27 @@ namespace Mensajeria
         private void txtBuscarContacto_TextChanged(object sender, EventArgs e)
         {
 
+            //Criterio de búsqueda. Buscará aquellos contactos que empiezen por la string introducida.
+            string busqueda = txtBuscarContacto.Text.Trim().ToLower();
+
+            if (busqueda.Equals(""))
+            {
+                //Si no se introduce nada entonces se mantiene el listView igual.
+                ActualizarLsView(lsViewContactos);
+                return;
+            }
+
+            List<Contacto> contactos = adminContactos.BuscarPorNombre(busqueda);
+            if (contactos.Count >= 1)
+            {
+                //Se carga el listView con una lista de contactos que cumplen el criterio de búsqueda.
+                ActualizarLsView(lsViewContactos, contactos);
+            }
+            else
+            {
+                //Si no cumple con el criterio de búsqueda entonces el listView se mantendra en blanco.
+                lsViewContactos.Items.Clear();
+            }
         }
 
         //Panel para crear y modificar los contactos.
@@ -205,6 +232,15 @@ namespace Mensajeria
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+
+        private void lsViewContactos_Click(object sender, EventArgs e)
+        {
+ 
+            ListViewItem listViewItem = lsViewContactos.SelectedItems[0];
+
 
         }
     }

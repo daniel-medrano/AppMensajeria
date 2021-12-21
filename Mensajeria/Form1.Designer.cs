@@ -50,6 +50,7 @@ namespace Mensajeria
             this.columnTelefono = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCorreo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlModContacto = new System.Windows.Forms.Panel();
+            this.bttnSubirFoto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblModContacto = new System.Windows.Forms.Label();
             this.bttnCnlModContacto = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@ namespace Mensajeria
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.bttnSubirFoto = new System.Windows.Forms.Button();
             this.pnlContactos.SuspendLayout();
             this.pnlModContacto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,9 +79,9 @@ namespace Mensajeria
             this.bttnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
             this.bttnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnHome.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnHome.Location = new System.Drawing.Point(229, 30);
+            this.bttnHome.Location = new System.Drawing.Point(21, 58);
             this.bttnHome.Name = "bttnHome";
-            this.bttnHome.Size = new System.Drawing.Size(86, 25);
+            this.bttnHome.Size = new System.Drawing.Size(64, 44);
             this.bttnHome.TabIndex = 52;
             this.bttnHome.Text = "Home";
             this.bttnHome.UseVisualStyleBackColor = false;
@@ -90,7 +90,7 @@ namespace Mensajeria
             // 
             this.lblMensajeria.AutoSize = true;
             this.lblMensajeria.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeria.Location = new System.Drawing.Point(65, 30);
+            this.lblMensajeria.Location = new System.Drawing.Point(115, 33);
             this.lblMensajeria.Name = "lblMensajeria";
             this.lblMensajeria.Size = new System.Drawing.Size(124, 25);
             this.lblMensajeria.TabIndex = 50;
@@ -103,7 +103,7 @@ namespace Mensajeria
             this.bttnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
             this.bttnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnVentas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnVentas.Location = new System.Drawing.Point(505, 30);
+            this.bttnVentas.Location = new System.Drawing.Point(12, 204);
             this.bttnVentas.Name = "bttnVentas";
             this.bttnVentas.Size = new System.Drawing.Size(86, 25);
             this.bttnVentas.TabIndex = 47;
@@ -117,7 +117,7 @@ namespace Mensajeria
             this.bttnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
             this.bttnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnCompras.Location = new System.Drawing.Point(413, 30);
+            this.bttnCompras.Location = new System.Drawing.Point(12, 173);
             this.bttnCompras.Name = "bttnCompras";
             this.bttnCompras.Size = new System.Drawing.Size(86, 25);
             this.bttnCompras.TabIndex = 46;
@@ -131,9 +131,9 @@ namespace Mensajeria
             this.bttnContactos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
             this.bttnContactos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnContactos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnContactos.Location = new System.Drawing.Point(321, 30);
+            this.bttnContactos.Location = new System.Drawing.Point(21, 108);
             this.bttnContactos.Name = "bttnContactos";
-            this.bttnContactos.Size = new System.Drawing.Size(86, 25);
+            this.bttnContactos.Size = new System.Drawing.Size(64, 48);
             this.bttnContactos.TabIndex = 45;
             this.bttnContactos.Text = "Contactos";
             this.bttnContactos.UseVisualStyleBackColor = false;
@@ -141,19 +141,19 @@ namespace Mensajeria
             // pnlContactos
             // 
             this.pnlContactos.BackColor = System.Drawing.Color.White;
-            this.pnlContactos.Controls.Add(this.txtBuscarContacto);
+            this.pnlContactos.Controls.Add(this.bttnNuevoContacto);
             this.pnlContactos.Controls.Add(this.bttnModificarContacto);
             this.pnlContactos.Controls.Add(this.bttnBorrarContacto);
-            this.pnlContactos.Controls.Add(this.bttnNuevoContacto);
             this.pnlContactos.Controls.Add(this.lsViewContactos);
-            this.pnlContactos.Location = new System.Drawing.Point(49, 61);
+            this.pnlContactos.Controls.Add(this.txtBuscarContacto);
+            this.pnlContactos.Location = new System.Drawing.Point(104, 61);
             this.pnlContactos.Name = "pnlContactos";
             this.pnlContactos.Size = new System.Drawing.Size(560, 327);
             this.pnlContactos.TabIndex = 48;
             // 
             // txtBuscarContacto
             // 
-            this.txtBuscarContacto.Location = new System.Drawing.Point(333, 290);
+            this.txtBuscarContacto.Location = new System.Drawing.Point(333, 16);
             this.txtBuscarContacto.Name = "txtBuscarContacto";
             this.txtBuscarContacto.Size = new System.Drawing.Size(214, 20);
             this.txtBuscarContacto.TabIndex = 4;
@@ -166,7 +166,7 @@ namespace Mensajeria
             this.bttnModificarContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnModificarContacto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnModificarContacto.ForeColor = System.Drawing.Color.Black;
-            this.bttnModificarContacto.Location = new System.Drawing.Point(210, 287);
+            this.bttnModificarContacto.Location = new System.Drawing.Point(108, 13);
             this.bttnModificarContacto.Name = "bttnModificarContacto";
             this.bttnModificarContacto.Size = new System.Drawing.Size(86, 25);
             this.bttnModificarContacto.TabIndex = 3;
@@ -182,7 +182,7 @@ namespace Mensajeria
             this.bttnBorrarContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnBorrarContacto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnBorrarContacto.ForeColor = System.Drawing.Color.Black;
-            this.bttnBorrarContacto.Location = new System.Drawing.Point(118, 287);
+            this.bttnBorrarContacto.Location = new System.Drawing.Point(200, 13);
             this.bttnBorrarContacto.Name = "bttnBorrarContacto";
             this.bttnBorrarContacto.Size = new System.Drawing.Size(86, 25);
             this.bttnBorrarContacto.TabIndex = 2;
@@ -198,7 +198,7 @@ namespace Mensajeria
             this.bttnNuevoContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnNuevoContacto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnNuevoContacto.ForeColor = System.Drawing.Color.Black;
-            this.bttnNuevoContacto.Location = new System.Drawing.Point(26, 287);
+            this.bttnNuevoContacto.Location = new System.Drawing.Point(16, 13);
             this.bttnNuevoContacto.Name = "bttnNuevoContacto";
             this.bttnNuevoContacto.Size = new System.Drawing.Size(86, 25);
             this.bttnNuevoContacto.TabIndex = 1;
@@ -217,12 +217,13 @@ namespace Mensajeria
             this.lsViewContactos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsViewContactos.FullRowSelect = true;
             this.lsViewContactos.HideSelection = false;
-            this.lsViewContactos.Location = new System.Drawing.Point(16, 11);
+            this.lsViewContactos.Location = new System.Drawing.Point(16, 42);
             this.lsViewContactos.Name = "lsViewContactos";
             this.lsViewContactos.Size = new System.Drawing.Size(531, 268);
             this.lsViewContactos.TabIndex = 0;
             this.lsViewContactos.UseCompatibleStateImageBehavior = false;
             this.lsViewContactos.View = System.Windows.Forms.View.Details;
+            this.lsViewContactos.Click += new System.EventHandler(this.lsViewContactos_Click);
             // 
             // columnNombre
             // 
@@ -254,10 +255,23 @@ namespace Mensajeria
             this.pnlModContacto.Controls.Add(this.label2);
             this.pnlModContacto.Controls.Add(this.txtNombreContacto);
             this.pnlModContacto.Controls.Add(this.bttnModContacto);
-            this.pnlModContacto.Location = new System.Drawing.Point(49, 61);
+            this.pnlModContacto.Location = new System.Drawing.Point(104, 61);
             this.pnlModContacto.Name = "pnlModContacto";
             this.pnlModContacto.Size = new System.Drawing.Size(560, 327);
             this.pnlModContacto.TabIndex = 49;
+            // 
+            // bttnSubirFoto
+            // 
+            this.bttnSubirFoto.BackColor = System.Drawing.Color.Transparent;
+            this.bttnSubirFoto.FlatAppearance.BorderSize = 0;
+            this.bttnSubirFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnSubirFoto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnSubirFoto.Location = new System.Drawing.Point(418, 160);
+            this.bttnSubirFoto.Name = "bttnSubirFoto";
+            this.bttnSubirFoto.Size = new System.Drawing.Size(100, 25);
+            this.bttnSubirFoto.TabIndex = 23;
+            this.bttnSubirFoto.Text = "Subir Foto";
+            this.bttnSubirFoto.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -391,7 +405,7 @@ namespace Mensajeria
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2});
-            this.listView1.Location = new System.Drawing.Point(638, 72);
+            this.listView1.Location = new System.Drawing.Point(876, 120);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(216, 268);
             this.listView1.TabIndex = 53;
@@ -413,32 +427,19 @@ namespace Mensajeria
             this.columnHeader3.Text = "Correo";
             this.columnHeader3.Width = 150;
             // 
-            // bttnSubirFoto
-            // 
-            this.bttnSubirFoto.BackColor = System.Drawing.Color.Transparent;
-            this.bttnSubirFoto.FlatAppearance.BorderSize = 0;
-            this.bttnSubirFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnSubirFoto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnSubirFoto.Location = new System.Drawing.Point(418, 160);
-            this.bttnSubirFoto.Name = "bttnSubirFoto";
-            this.bttnSubirFoto.Size = new System.Drawing.Size(100, 25);
-            this.bttnSubirFoto.TabIndex = 23;
-            this.bttnSubirFoto.Text = "Subir Foto";
-            this.bttnSubirFoto.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 413);
+            this.ClientSize = new System.Drawing.Size(1126, 413);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.bttnHome);
             this.Controls.Add(this.lblMensajeria);
             this.Controls.Add(this.bttnVentas);
             this.Controls.Add(this.bttnCompras);
             this.Controls.Add(this.bttnContactos);
-            this.Controls.Add(this.pnlModContacto);
             this.Controls.Add(this.pnlContactos);
+            this.Controls.Add(this.pnlModContacto);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
