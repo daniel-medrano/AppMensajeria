@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Mensajeria.Modelos;
+using System.Drawing;
 
 namespace Mensajeria.Administradores
 {
@@ -141,6 +142,14 @@ namespace Mensajeria.Administradores
         public string ObtenerImagenPorDefecto()
         {
             return Contacto.ImagenPorDefecto;
+        }
+
+        public bool EsImagenPorDefecto(string ubicacionImagen)
+        {
+            if (Image.FromFile(ubicacionImagen).PixelFormat == Image.FromFile(Contacto.ImagenPorDefecto).PixelFormat)
+                return true;
+            else
+                return false;
         }
     }
 }

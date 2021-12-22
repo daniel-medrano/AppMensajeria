@@ -38,18 +38,19 @@ namespace Mensajeria
             this.bttnHome = new System.Windows.Forms.Button();
             this.lblMensajeria = new System.Windows.Forms.Label();
             this.bttnVentas = new System.Windows.Forms.Button();
-            this.bttnCompras = new System.Windows.Forms.Button();
+            this.bttnCorreos = new System.Windows.Forms.Button();
             this.bttnContactos = new System.Windows.Forms.Button();
             this.pnlContactos = new System.Windows.Forms.Panel();
-            this.txtBuscarContacto = new System.Windows.Forms.TextBox();
+            this.bttnNuevoContacto = new System.Windows.Forms.Button();
             this.bttnModificarContacto = new System.Windows.Forms.Button();
             this.bttnBorrarContacto = new System.Windows.Forms.Button();
-            this.bttnNuevoContacto = new System.Windows.Forms.Button();
             this.lsViewContactos = new System.Windows.Forms.ListView();
             this.columnNombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTelefono = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCorreo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtBuscarContacto = new System.Windows.Forms.TextBox();
             this.pnlModContacto = new System.Windows.Forms.Panel();
+            this.bttnRegresarVisualizar = new System.Windows.Forms.Button();
             this.bttnSubirFoto = new System.Windows.Forms.Button();
             this.picBoxFoto = new System.Windows.Forms.PictureBox();
             this.lblModContacto = new System.Windows.Forms.Label();
@@ -67,10 +68,24 @@ namespace Mensajeria
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.bttnRegresarVisualizar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bttnEnviar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtAsunto = new System.Windows.Forms.TextBox();
+            this.txtContenido = new System.Windows.Forms.RichTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtPara = new System.Windows.Forms.TextBox();
+            this.txtDe = new System.Windows.Forms.TextBox();
             this.pnlContactos.SuspendLayout();
             this.pnlModContacto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bttnHome
@@ -111,19 +126,19 @@ namespace Mensajeria
             this.bttnVentas.Text = "Ventas";
             this.bttnVentas.UseVisualStyleBackColor = false;
             // 
-            // bttnCompras
+            // bttnCorreos
             // 
-            this.bttnCompras.BackColor = System.Drawing.Color.Transparent;
-            this.bttnCompras.FlatAppearance.BorderSize = 0;
-            this.bttnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
-            this.bttnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnCompras.Location = new System.Drawing.Point(12, 173);
-            this.bttnCompras.Name = "bttnCompras";
-            this.bttnCompras.Size = new System.Drawing.Size(86, 25);
-            this.bttnCompras.TabIndex = 46;
-            this.bttnCompras.Text = "Compras";
-            this.bttnCompras.UseVisualStyleBackColor = false;
+            this.bttnCorreos.BackColor = System.Drawing.Color.Transparent;
+            this.bttnCorreos.FlatAppearance.BorderSize = 0;
+            this.bttnCorreos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.bttnCorreos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnCorreos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnCorreos.Location = new System.Drawing.Point(12, 173);
+            this.bttnCorreos.Name = "bttnCorreos";
+            this.bttnCorreos.Size = new System.Drawing.Size(86, 25);
+            this.bttnCorreos.TabIndex = 46;
+            this.bttnCorreos.Text = "Correo";
+            this.bttnCorreos.UseVisualStyleBackColor = false;
             // 
             // bttnContactos
             // 
@@ -152,13 +167,21 @@ namespace Mensajeria
             this.pnlContactos.Size = new System.Drawing.Size(560, 327);
             this.pnlContactos.TabIndex = 48;
             // 
-            // txtBuscarContacto
+            // bttnNuevoContacto
             // 
-            this.txtBuscarContacto.Location = new System.Drawing.Point(333, 16);
-            this.txtBuscarContacto.Name = "txtBuscarContacto";
-            this.txtBuscarContacto.Size = new System.Drawing.Size(214, 20);
-            this.txtBuscarContacto.TabIndex = 4;
-            this.txtBuscarContacto.TextChanged += new System.EventHandler(this.txtBuscarContacto_TextChanged);
+            this.bttnNuevoContacto.BackColor = System.Drawing.Color.Transparent;
+            this.bttnNuevoContacto.FlatAppearance.BorderSize = 0;
+            this.bttnNuevoContacto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
+            this.bttnNuevoContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnNuevoContacto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnNuevoContacto.ForeColor = System.Drawing.Color.Black;
+            this.bttnNuevoContacto.Location = new System.Drawing.Point(16, 13);
+            this.bttnNuevoContacto.Name = "bttnNuevoContacto";
+            this.bttnNuevoContacto.Size = new System.Drawing.Size(86, 25);
+            this.bttnNuevoContacto.TabIndex = 1;
+            this.bttnNuevoContacto.Text = "Nuevo";
+            this.bttnNuevoContacto.UseVisualStyleBackColor = false;
+            this.bttnNuevoContacto.Click += new System.EventHandler(this.bttnNuevoContacto_Click);
             // 
             // bttnModificarContacto
             // 
@@ -190,22 +213,6 @@ namespace Mensajeria
             this.bttnBorrarContacto.Text = "Borrar";
             this.bttnBorrarContacto.UseVisualStyleBackColor = false;
             this.bttnBorrarContacto.Click += new System.EventHandler(this.bttnBorrarContacto_Click);
-            // 
-            // bttnNuevoContacto
-            // 
-            this.bttnNuevoContacto.BackColor = System.Drawing.Color.Transparent;
-            this.bttnNuevoContacto.FlatAppearance.BorderSize = 0;
-            this.bttnNuevoContacto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGreen;
-            this.bttnNuevoContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnNuevoContacto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnNuevoContacto.ForeColor = System.Drawing.Color.Black;
-            this.bttnNuevoContacto.Location = new System.Drawing.Point(16, 13);
-            this.bttnNuevoContacto.Name = "bttnNuevoContacto";
-            this.bttnNuevoContacto.Size = new System.Drawing.Size(86, 25);
-            this.bttnNuevoContacto.TabIndex = 1;
-            this.bttnNuevoContacto.Text = "Nuevo";
-            this.bttnNuevoContacto.UseVisualStyleBackColor = false;
-            this.bttnNuevoContacto.Click += new System.EventHandler(this.bttnNuevoContacto_Click);
             // 
             // lsViewContactos
             // 
@@ -241,6 +248,14 @@ namespace Mensajeria
             this.columnCorreo.Text = "Correo";
             this.columnCorreo.Width = 150;
             // 
+            // txtBuscarContacto
+            // 
+            this.txtBuscarContacto.Location = new System.Drawing.Point(333, 16);
+            this.txtBuscarContacto.Name = "txtBuscarContacto";
+            this.txtBuscarContacto.Size = new System.Drawing.Size(214, 20);
+            this.txtBuscarContacto.TabIndex = 4;
+            this.txtBuscarContacto.TextChanged += new System.EventHandler(this.txtBuscarContacto_TextChanged);
+            // 
             // pnlModContacto
             // 
             this.pnlModContacto.Controls.Add(this.bttnRegresarVisualizar);
@@ -261,6 +276,21 @@ namespace Mensajeria
             this.pnlModContacto.Name = "pnlModContacto";
             this.pnlModContacto.Size = new System.Drawing.Size(560, 327);
             this.pnlModContacto.TabIndex = 49;
+            // 
+            // bttnRegresarVisualizar
+            // 
+            this.bttnRegresarVisualizar.BackColor = System.Drawing.Color.Transparent;
+            this.bttnRegresarVisualizar.FlatAppearance.BorderSize = 0;
+            this.bttnRegresarVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnRegresarVisualizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnRegresarVisualizar.Location = new System.Drawing.Point(381, 285);
+            this.bttnRegresarVisualizar.Name = "bttnRegresarVisualizar";
+            this.bttnRegresarVisualizar.Size = new System.Drawing.Size(86, 25);
+            this.bttnRegresarVisualizar.TabIndex = 24;
+            this.bttnRegresarVisualizar.Text = "Regresar";
+            this.bttnRegresarVisualizar.UseVisualStyleBackColor = false;
+            this.bttnRegresarVisualizar.Visible = false;
+            this.bttnRegresarVisualizar.Click += new System.EventHandler(this.bttnRegresarVisualizar_Click);
             // 
             // bttnSubirFoto
             // 
@@ -411,9 +441,9 @@ namespace Mensajeria
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2});
-            this.listView1.Location = new System.Drawing.Point(808, 86);
+            this.listView1.Location = new System.Drawing.Point(21, 406);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(216, 268);
+            this.listView1.Size = new System.Drawing.Size(128, 268);
             this.listView1.TabIndex = 53;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Tile;
@@ -433,31 +463,145 @@ namespace Mensajeria
             this.columnHeader3.Text = "Correo";
             this.columnHeader3.Width = 150;
             // 
-            // bttnRegresarVisualizar
+            // panel1
             // 
-            this.bttnRegresarVisualizar.BackColor = System.Drawing.Color.Transparent;
-            this.bttnRegresarVisualizar.FlatAppearance.BorderSize = 0;
-            this.bttnRegresarVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnRegresarVisualizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnRegresarVisualizar.Location = new System.Drawing.Point(381, 285);
-            this.bttnRegresarVisualizar.Name = "bttnRegresarVisualizar";
-            this.bttnRegresarVisualizar.Size = new System.Drawing.Size(86, 25);
-            this.bttnRegresarVisualizar.TabIndex = 24;
-            this.bttnRegresarVisualizar.Text = "Regresar";
-            this.bttnRegresarVisualizar.UseVisualStyleBackColor = false;
-            this.bttnRegresarVisualizar.Visible = false;
-            this.bttnRegresarVisualizar.Click += new System.EventHandler(this.bttnRegresarVisualizar_Click);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.bttnEnviar);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtContrasena);
+            this.panel1.Controls.Add(this.txtUsuario);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtAsunto);
+            this.panel1.Controls.Add(this.txtContenido);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.txtPara);
+            this.panel1.Controls.Add(this.txtDe);
+            this.panel1.Location = new System.Drawing.Point(683, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(560, 327);
+            this.panel1.TabIndex = 49;
+            // 
+            // bttnEnviar
+            // 
+            this.bttnEnviar.Location = new System.Drawing.Point(90, 235);
+            this.bttnEnviar.Name = "bttnEnviar";
+            this.bttnEnviar.Size = new System.Drawing.Size(75, 23);
+            this.bttnEnviar.TabIndex = 25;
+            this.bttnEnviar.Text = "Enviar";
+            this.bttnEnviar.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(300, 242);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Contraseña:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(318, 216);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Usuario:";
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(370, 239);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '●';
+            this.txtContrasena.Size = new System.Drawing.Size(100, 20);
+            this.txtContrasena.TabIndex = 22;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(370, 213);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(321, 75);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Asunto:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 101);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Contenido:";
+            // 
+            // txtAsunto
+            // 
+            this.txtAsunto.Location = new System.Drawing.Point(370, 72);
+            this.txtAsunto.Name = "txtAsunto";
+            this.txtAsunto.Size = new System.Drawing.Size(100, 20);
+            this.txtAsunto.TabIndex = 18;
+            // 
+            // txtContenido
+            // 
+            this.txtContenido.Location = new System.Drawing.Point(90, 98);
+            this.txtContenido.Name = "txtContenido";
+            this.txtContenido.Size = new System.Drawing.Size(380, 96);
+            this.txtContenido.TabIndex = 17;
+            this.txtContenido.Text = "";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(49, 75);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Para:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(49, 49);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(24, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "De:";
+            // 
+            // txtPara
+            // 
+            this.txtPara.Location = new System.Drawing.Point(90, 72);
+            this.txtPara.Name = "txtPara";
+            this.txtPara.Size = new System.Drawing.Size(100, 20);
+            this.txtPara.TabIndex = 14;
+            // 
+            // txtDe
+            // 
+            this.txtDe.Location = new System.Drawing.Point(90, 46);
+            this.txtDe.Name = "txtDe";
+            this.txtDe.Size = new System.Drawing.Size(100, 20);
+            this.txtDe.TabIndex = 13;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 413);
+            this.ClientSize = new System.Drawing.Size(1216, 413);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.bttnHome);
             this.Controls.Add(this.lblMensajeria);
             this.Controls.Add(this.bttnVentas);
-            this.Controls.Add(this.bttnCompras);
+            this.Controls.Add(this.bttnCorreos);
             this.Controls.Add(this.bttnContactos);
             this.Controls.Add(this.pnlContactos);
             this.Controls.Add(this.pnlModContacto);
@@ -469,6 +613,8 @@ namespace Mensajeria
             this.pnlModContacto.ResumeLayout(false);
             this.pnlModContacto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,7 +625,7 @@ namespace Mensajeria
         private System.Windows.Forms.Button bttnHome;
         private System.Windows.Forms.Label lblMensajeria;
         private System.Windows.Forms.Button bttnVentas;
-        private System.Windows.Forms.Button bttnCompras;
+        private System.Windows.Forms.Button bttnCorreos;
         private System.Windows.Forms.Button bttnContactos;
         private System.Windows.Forms.Panel pnlContactos;
         private System.Windows.Forms.TextBox txtBuscarContacto;
@@ -509,6 +655,20 @@ namespace Mensajeria
         private System.Windows.Forms.PictureBox picBoxFoto;
         private System.Windows.Forms.Button bttnSubirFoto;
         private System.Windows.Forms.Button bttnRegresarVisualizar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button bttnEnviar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtAsunto;
+        private System.Windows.Forms.RichTextBox txtContenido;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtPara;
+        private System.Windows.Forms.TextBox txtDe;
     }
 }
 

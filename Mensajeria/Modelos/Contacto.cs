@@ -18,7 +18,6 @@ namespace Mensajeria.Modelos
         public string NombreCompleto { get { return Nombre + " " + Apellido; } }
         public static string Archivo { get { return "Contactos.txt"; } }
         public static string ImagenPorDefecto { get { return "Imagenes\\default.jpg"; } }
-
         public string UbicacionImagen { get; set; }
 
         //public Clase Imagen {get; set;} OPCIONAL
@@ -41,8 +40,11 @@ namespace Mensajeria.Modelos
             Apellido = apellido;
             Telefono = telefono;
             Correo = correo;
-            BorrarImagen(UbicacionImagen);
-            UbicacionImagen = GuardarImagen(ubicacionImagen);
+            if (ubicacionImagen != UbicacionImagen)
+            {
+                BorrarImagen(UbicacionImagen);
+                UbicacionImagen = GuardarImagen(ubicacionImagen);
+            }
             return Remplazar();
         }
 

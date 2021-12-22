@@ -130,6 +130,8 @@ namespace Mensajeria
             bttnModContacto.Text = "Crear";
             bttnModContacto.Tag = 1;
             picBoxFoto.ImageLocation = adminContactos.ObtenerImagenPorDefecto();
+            bttnSubirFoto.Text = "Subir Foto";
+            bttnSubirFoto.Tag = 1;
             pnlModContacto.BringToFront();
         }
 
@@ -144,6 +146,17 @@ namespace Mensajeria
             txtTelefonoContacto.Text = contacto.Telefono.ToString();
             txtCorreoContacto.Text = contacto.Correo;
             picBoxFoto.ImageLocation = contacto.UbicacionImagen;
+            if (adminContactos.EsImagenPorDefecto(contacto.UbicacionImagen))
+            {
+                bttnSubirFoto.Text = "Subir Foto";
+                bttnSubirFoto.Tag = 1;
+            }
+            else
+            {
+
+                bttnSubirFoto.Text = "Quitar Foto";
+                bttnSubirFoto.Tag = 2;
+            }
             pnlModContacto.BringToFront();
         }
 
