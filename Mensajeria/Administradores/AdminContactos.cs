@@ -21,10 +21,10 @@ namespace Mensajeria.Administradores
 
         }
         //Crea un nuevo producto y lo agrega a productos.
-        public bool Crear(string nombre, string apellido, int telefono, string correo)
+        public bool Crear(string nombre, string apellido, int telefono, string correo, string ubicacionImagen)
         {
             int id = adminIDs.ObtenerIDDisponible();
-            Contacto nuevo = new Contacto(id, nombre, apellido, telefono, correo);
+            Contacto nuevo = new Contacto(id, nombre, apellido, telefono, correo, ubicacionImagen);
             nuevo.Insertar();
             contactos.Add(nuevo);
             return true;
@@ -44,12 +44,12 @@ namespace Mensajeria.Administradores
             return false;
         }
 
-        public bool Modificar(int id, string nombre, string apellido, int telefono, string correo)
+        public bool Modificar(int id, string nombre, string apellido, int telefono, string correo, string ubicacionImagen)
         {
             Contacto contacto = Buscar(id);
             if (contacto != null)
             {
-                return contacto.Modificar(nombre, apellido, telefono, correo);
+                return contacto.Modificar(nombre, apellido, telefono, correo, ubicacionImagen);
             }
             return false;
         }
@@ -89,13 +89,13 @@ namespace Mensajeria.Administradores
             return busquedas;
         }
 
-        private bool CargarContacto(int id, string nombre, string apellido, int telefono, string correo)
+        private bool CargarContacto(int id, string nombre, string apellido, int telefono, string correo, string ubicacionImagen)
         {
             Contacto contacto = Buscar(id);
 
             if (contacto == null)
             {
-                contactos.Add(new Contacto(id, nombre, apellido, telefono, correo));
+                contactos.Add(new Contacto(id, nombre, apellido, telefono, correo, ubicacionImagen));
                 return true;
 
             }
@@ -114,7 +114,7 @@ namespace Mensajeria.Administradores
                 {
                     string[] partes = linea.Split('#');
 
-                    CargarContacto(int.Parse(partes[0]), partes[1], partes[2], int.Parse(partes[3]), partes[4]);
+                    CargarContacto(int.Parse(partes[0]), partes[1], partes[2], int.Parse(partes[3]), partes[4], partes[5]);
 
                     linea = leer.ReadLine();
                 }
@@ -136,6 +136,11 @@ namespace Mensajeria.Administradores
         public List<Contacto> ObtenerContactos()
         {
             return contactos;
+        }
+
+        public string ObtenerImagenPorDefecto()
+        {
+            return Contacto.ImagenPorDefecto;
         }
     }
 }

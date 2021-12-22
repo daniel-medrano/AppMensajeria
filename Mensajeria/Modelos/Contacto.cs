@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Drawing;
 
 namespace Mensajeria.Modelos
 {
@@ -15,27 +16,33 @@ namespace Mensajeria.Modelos
         public int Telefono { get; set; }
         public string Correo { get; set; }
         public string NombreCompleto { get { return Nombre + " " + Apellido; } }
-        public static string Archivo { get { return "Contactos.txt"; } } 
+        public static string Archivo { get { return "Contactos.txt"; } }
+        public static string ImagenPorDefecto { get { return "Imagenes\\default.jpg"; } }
+
+        public string UbicacionImagen { get; set; }
 
         //public Clase Imagen {get; set;} OPCIONAL
 
-        public Contacto(int id, string nombre, string apellido, int telefono, string correo)
+        public Contacto(int id, string nombre, string apellido, int telefono, string correo, string ubicacionImagen)
         {
             ID = id;
             Nombre = nombre;
             Apellido = apellido;
             Telefono = telefono;
             Correo = correo;
+            UbicacionImagen = GuardarImagen(ubicacionImagen);
         }
 
         public Contacto() { }
 
-        public bool Modificar(string nombre, string apellido, int telefono, string correo)
+        public bool Modificar(string nombre, string apellido, int telefono, string correo, string ubicacionImagen)
         {
             Nombre = nombre;
             Apellido = apellido;
             Telefono = telefono;
             Correo = correo;
+            BorrarImagen(UbicacionImagen);
+            UbicacionImagen = GuardarImagen(ubicacionImagen);
             return Remplazar();
         }
 
@@ -58,6 +65,10 @@ namespace Mensajeria.Modelos
                     if (int.Parse(partes[0]) != ID)
                     {
                         escribir.WriteLine(linea);
+                    }
+                    else
+                    {
+                        BorrarImagen(partes[5]);
                     }
                     linea = leer.ReadLine();
                 }
@@ -149,8 +160,26 @@ namespace Mensajeria.Modelos
         }
         public string ObtenerContacto()
         {
-            return ID + "#" + Nombre + "#" + Apellido + "#" + Telefono + "#" + Correo;
+            return ID + "#" + Nombre + "#" + Apellido + "#" + Telefono + "#" + Correo + "#" + UbicacionImagen;
         }
+
+        public string GuardarImagen(string path)
+        {
+            string pathNuevo = "Imagenes\\" + ID + path.Substring(path.Length - 4);
+            if (path != pathNuevo)
+            {
+                File.Copy(path, pathNuevo);
+                return pathNuevo;
+            }
+            return path;
+        }
+
+        public void BorrarImagen(string path)
+        {
+            File.Delete(path);
+        }
+        
+
 
     }
 }

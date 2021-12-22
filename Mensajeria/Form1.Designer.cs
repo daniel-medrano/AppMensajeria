@@ -51,7 +51,7 @@ namespace Mensajeria
             this.columnCorreo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlModContacto = new System.Windows.Forms.Panel();
             this.bttnSubirFoto = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxFoto = new System.Windows.Forms.PictureBox();
             this.lblModContacto = new System.Windows.Forms.Label();
             this.bttnCnlModContacto = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,9 +67,10 @@ namespace Mensajeria
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bttnRegresarVisualizar = new System.Windows.Forms.Button();
             this.pnlContactos.SuspendLayout();
             this.pnlModContacto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // bttnHome
@@ -242,8 +243,9 @@ namespace Mensajeria
             // 
             // pnlModContacto
             // 
+            this.pnlModContacto.Controls.Add(this.bttnRegresarVisualizar);
             this.pnlModContacto.Controls.Add(this.bttnSubirFoto);
-            this.pnlModContacto.Controls.Add(this.pictureBox1);
+            this.pnlModContacto.Controls.Add(this.picBoxFoto);
             this.pnlModContacto.Controls.Add(this.lblModContacto);
             this.pnlModContacto.Controls.Add(this.bttnCnlModContacto);
             this.pnlModContacto.Controls.Add(this.label6);
@@ -270,16 +272,20 @@ namespace Mensajeria
             this.bttnSubirFoto.Name = "bttnSubirFoto";
             this.bttnSubirFoto.Size = new System.Drawing.Size(100, 25);
             this.bttnSubirFoto.TabIndex = 23;
+            this.bttnSubirFoto.Tag = "1";
             this.bttnSubirFoto.Text = "Subir Foto";
             this.bttnSubirFoto.UseVisualStyleBackColor = false;
+            this.bttnSubirFoto.Click += new System.EventHandler(this.bttnSubirFoto_Click);
             // 
-            // pictureBox1
+            // picBoxFoto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(418, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 108);
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.picBoxFoto.Location = new System.Drawing.Point(418, 45);
+            this.picBoxFoto.Name = "picBoxFoto";
+            this.picBoxFoto.Size = new System.Drawing.Size(100, 108);
+            this.picBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxFoto.TabIndex = 22;
+            this.picBoxFoto.TabStop = false;
+            this.picBoxFoto.Tag = "";
             // 
             // lblModContacto
             // 
@@ -405,7 +411,7 @@ namespace Mensajeria
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2});
-            this.listView1.Location = new System.Drawing.Point(876, 120);
+            this.listView1.Location = new System.Drawing.Point(808, 86);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(216, 268);
             this.listView1.TabIndex = 53;
@@ -427,11 +433,26 @@ namespace Mensajeria
             this.columnHeader3.Text = "Correo";
             this.columnHeader3.Width = 150;
             // 
+            // bttnRegresarVisualizar
+            // 
+            this.bttnRegresarVisualizar.BackColor = System.Drawing.Color.Transparent;
+            this.bttnRegresarVisualizar.FlatAppearance.BorderSize = 0;
+            this.bttnRegresarVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnRegresarVisualizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnRegresarVisualizar.Location = new System.Drawing.Point(381, 285);
+            this.bttnRegresarVisualizar.Name = "bttnRegresarVisualizar";
+            this.bttnRegresarVisualizar.Size = new System.Drawing.Size(86, 25);
+            this.bttnRegresarVisualizar.TabIndex = 24;
+            this.bttnRegresarVisualizar.Text = "Regresar";
+            this.bttnRegresarVisualizar.UseVisualStyleBackColor = false;
+            this.bttnRegresarVisualizar.Visible = false;
+            this.bttnRegresarVisualizar.Click += new System.EventHandler(this.bttnRegresarVisualizar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 413);
+            this.ClientSize = new System.Drawing.Size(683, 413);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.bttnHome);
             this.Controls.Add(this.lblMensajeria);
@@ -447,7 +468,7 @@ namespace Mensajeria
             this.pnlContactos.PerformLayout();
             this.pnlModContacto.ResumeLayout(false);
             this.pnlModContacto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,8 +506,9 @@ namespace Mensajeria
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxFoto;
         private System.Windows.Forms.Button bttnSubirFoto;
+        private System.Windows.Forms.Button bttnRegresarVisualizar;
     }
 }
 

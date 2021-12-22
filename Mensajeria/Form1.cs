@@ -27,8 +27,10 @@ namespace Mensajeria
         }
         private void lsViewContactos_DoubleClick(object sender, EventArgs e)
         {
-            ListViewItem listViewItem = lsViewContactos.SelectedItems[0];
-            MessageBox.Show(listViewItem.Text);
+            ListViewItem contacto = lsViewContactos.SelectedItems[0];
+
+            GuardarIdContacto(int.Parse(contacto.Tag.ToString()));
+            PonerModoVisualizarContacto(ObtenerIdContacto());
         }
         //Panel para visualizar y mantener los contactos.
         private void bttnNuevoContacto_Click(object sender, EventArgs e)
@@ -127,6 +129,7 @@ namespace Mensajeria
             lblModContacto.Text = "Crear Contacto";
             bttnModContacto.Text = "Crear";
             bttnModContacto.Tag = 1;
+            picBoxFoto.ImageLocation = adminContactos.ObtenerImagenPorDefecto();
             pnlModContacto.BringToFront();
         }
 
@@ -140,6 +143,29 @@ namespace Mensajeria
             txtApellidoContacto.Text = contacto.Apellido;
             txtTelefonoContacto.Text = contacto.Telefono.ToString();
             txtCorreoContacto.Text = contacto.Correo;
+            picBoxFoto.ImageLocation = contacto.UbicacionImagen;
+            pnlModContacto.BringToFront();
+        }
+
+        private void PonerModoVisualizarContacto(int id)
+        {
+            lblModContacto.Text = "Visualizar Contacto";
+            bttnRegresarVisualizar.Visible = true;
+            bttnRegresarVisualizar.Location = new Point(243, 285);
+            bttnModContacto.Visible = false;
+            bttnCnlModContacto.Visible = false;
+            bttnModContacto.Tag = 2;
+            Contacto contacto = adminContactos.Buscar(id);
+            txtNombreContacto.Text = contacto.Nombre;
+            txtNombreContacto.Enabled = false;
+            txtApellidoContacto.Text = contacto.Apellido;
+            txtApellidoContacto.Enabled = false;
+            txtTelefonoContacto.Text = contacto.Telefono.ToString();
+            txtTelefonoContacto.Enabled = false;
+            txtCorreoContacto.Text = contacto.Correo;
+            txtCorreoContacto.Enabled = false;
+            picBoxFoto.ImageLocation = contacto.UbicacionImagen;
+            bttnSubirFoto.Enabled = false;
             pnlModContacto.BringToFront();
         }
         private void LimpiarPanelModContacto()
@@ -148,6 +174,7 @@ namespace Mensajeria
             txtApellidoContacto.Text = "";
             txtTelefonoContacto.Text = "";
             txtCorreoContacto.Text = "";
+            picBoxFoto.ImageLocation = "";
         }
         private void CancelarOperacionContacto()
         {
@@ -162,8 +189,9 @@ namespace Mensajeria
                 string apellido = txtApellidoContacto.Text;
                 int telefono = int.Parse(txtTelefonoContacto.Text);
                 string correo = txtCorreoContacto.Text;
+                string ubicacionImagen = picBoxFoto.ImageLocation;
 
-                adminContactos.Crear(nombre, apellido, telefono, correo);
+                adminContactos.Crear(nombre, apellido, telefono, correo, ubicacionImagen);
                 ActualizarLsView(lsViewContactos);
                 LimpiarPanelModContacto();
                 pnlContactos.BringToFront();
@@ -181,7 +209,9 @@ namespace Mensajeria
             string apellido = txtApellidoContacto.Text;
             int telefono = int.Parse(txtTelefonoContacto.Text);
             string correo = txtCorreoContacto.Text;
-            adminContactos.Modificar(id, nombre, apellido, telefono, correo);
+            string ubicacionImagen = picBoxFoto.ImageLocation;
+
+            adminContactos.Modificar(id, nombre, apellido, telefono, correo, ubicacionImagen);
             LimpiarPanelModContacto();
             pnlContactos.BringToFront();
             ActualizarLsView(lsViewContactos);
@@ -242,6 +272,61 @@ namespace Mensajeria
             ListViewItem listViewItem = lsViewContactos.SelectedItems[0];
 
 
+        }
+        private void SubirFoto()
+        {
+            string pathImagen = "";
+            try
+            {
+                OpenFileDialog archivoDialogo = new OpenFileDialog();
+                archivoDialogo.Filter = "jpg files(.*jpg)|*.jpg| PNG files(.*png)|*.png| All Files(*.*)|*.*";
+                DialogResult resultado = archivoDialogo.ShowDialog();
+                if (resultado == DialogResult.OK)
+                {
+                    pathImagen = archivoDialogo.FileName;
+
+                    picBoxFoto.ImageLocation = pathImagen;
+
+                    bttnSubirFoto.Text = "Quitar Foto";
+                    bttnSubirFoto.Tag = 2;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Algo ha salido mal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void QuitarFoto()
+        {
+            picBoxFoto.ImageLocation = adminContactos.ObtenerImagenPorDefecto();
+            bttnSubirFoto.Text = "Subir Foto";
+            bttnSubirFoto.Tag = 1;
+        }
+        private void bttnSubirFoto_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(bttnSubirFoto.Tag.ToString()) == 1)
+            {
+                SubirFoto();
+            }
+            else
+            {
+                QuitarFoto();
+            }
+        }
+
+        private void bttnRegresarVisualizar_Click(object sender, EventArgs e)
+        {
+            bttnRegresarVisualizar.Visible = false;
+            bttnModContacto.Visible = true;
+            bttnCnlModContacto.Visible = true;
+            txtNombreContacto.Enabled = true;
+            txtApellidoContacto.Enabled = true;
+            txtTelefonoContacto.Enabled = true;
+            txtCorreoContacto.Enabled = true;
+            bttnSubirFoto.Enabled = true;
+            LimpiarPanelModContacto();
+            pnlContactos.BringToFront();
         }
     }
 }
